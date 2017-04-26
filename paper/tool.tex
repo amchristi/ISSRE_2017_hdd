@@ -1,0 +1,55 @@
+
+\section{Tool}
+\label{sec:experiments}
+
+In this section, we discuss intuition behind combining HDD with statement deletion mutation to develop \mytool\  such that it fits into adaptation workflow, modified HDD algorithm, architecture, implementation and usage of the tool in detail.       
+
+\subsection{coverage and dead code removal}
+It is important to note that if the program parts that can be reduced only contains non covered entities, just computing coverage and removing non covered entities will do the job. But even if entities are covered, but does not contribute to the correctness of program as defined by test suite, they qualify as reduction candidates. Though \mytool\ can be optimized by allowing non covered entities to be reduced first, something we are planning to do in future. To provide an example, consider following code that was removed as part of our reduction from URLValidator class.
+
+\begin{lstlisting}[caption={URLValidator reduced code}]
+if (!isValidAuthority(authority)) {
+	return false;
+}
+\end{lstlisting}
+
+The code was reduced when we relaxed specifications by randomly turning off 2 tests. The code was reduced though it was \emph{covered 42018 times during execution}. 
+
+%At any point in the reduction step, we are essentially creating a statement deletion mutant or a combination of multiple statement  though with the purpose of creating a useful version of the program instead of injecting a fault. We start the process from leaf nodes, if we find a useful SDL mutant, we keep it and use it for rest of the process until local minimal is reached.%  
+
+
+\subsection{1-minimal program}
+\label{sec:opensource}
+\input{opensource}
+
+\subsection{Statement Deletion mutation - SDL}
+\label{sec:sdl}
+\input{sdl}
+
+
+\subsection{Intuitive modification to HDD for RASS}
+\label{sec:intutive}
+\input{intutivemodification}
+
+\subsection{Algorithm}
+\input{algorithm}
+\label{sec:algorithm}
+
+
+\subsection{Architecture and implementation}
+\label{sec:architecture}
+\input{architecture}
+
+
+\subsection{Usage}
+\input{usage}
+
+
+
+
+\subsection{Challenges}
+\input{challanges}
+
+
+
+

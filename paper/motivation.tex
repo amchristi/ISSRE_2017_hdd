@@ -1,0 +1,5 @@
+\section{Motivation}
+
+We hypothesize that most of the mission critical system and industry strength software, specifications are well documented and verified using test suite. So, for rest of the paper we assume availability of a \emph{good test suite}. Specifications that need to be relaxed to allow resource adaptations can be done at test suite. To accommodate certain adaptations, developers will alter the test suite by simply removing some test cases that executes some feature or not executing some invariants of test cases. Some other complex combinations can also be created but for the discussion of our tool, we simply say that a modified test suite will capture the reduced specifications for adaptations. 
+
+We propose that if test suite can be modified by developer to reflect relaxed specifications, using the test suite and original program, we can automatically produce reduced component using a reduction tool like HDD. We implemented one such tool and did some preliminary evaluation for the tool.       

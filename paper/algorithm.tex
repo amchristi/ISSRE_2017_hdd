@@ -1,0 +1,21 @@
+The basic algorithm is described below. It still follows all the standard steps of HDD, though it is modified to fit into adaptation workflow better by taking into consideration modification mentioned in previous section. 
+
+\begin{algorithm}
+\caption{Hierarchical Delta Debugging}
+\hrulefill
+\begin{algorithmic}[1]
+\Procedure{hdd}{$inputTree$}
+    \State $level\gets\textsc{HigestDepthLevel}(inputTree)$
+    \State $nodes\gets\textsc{TagNodes}(inputTree,level)$ 
+    \While{nodes are not empty}
+	\State $minConfig\gets\textsc{ddmin}(inputTree)$
+	\State $\textsc{prune}(inputTree,level,minConfig)$
+	\State $level = level - 1$
+	\State $nodes\gets\textsc{TagNodes}(inputTree,level)$ 	
+	\EndWhile
+
+    \State \textbf{return} $level$ 
+\EndProcedure
+\end{algorithmic}
+\hrulefill
+\end{algorithm}

@@ -1,0 +1,71 @@
+\begin{table*}
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c||c|c|c|c|c|}
+\hline
+\hline
+& \multicolumn{2}{|c|}{Label 2} & \multicolumn{2}{|c|}{Label 1} \\
+\hline
+Class & Reduction & Max & Reduction & Max  \\
+\hline
+\hline
+{\tt AntBuilder} & 0.9 & 3 & 0.9 & 3  \\
+\hline
+{\tt UrlValidator} & 1.6 & 3 & 2.2 & 3  \\
+\hline
+{\tt DomainValidator} & 1.3 & 3 & 1.85 & 3 \\
+\hline
+{\tt RegexValidator} & 1.6 & 3 & 1.9 & 3 \\
+\hline
+{\tt Engine} & 0 & 0 & 0 & 0 \\
+\hline
+{\tt JexlArithmetic} & 0.6 & error & 2 & error \\ 
+\hline
+{\tt JexlEvalContext} & 1 & 1 & 1 & 1 \\
+\hline
+{\tt Schedule} & 0.1 & 2 & 0.2 & 4 \\
+\hline
+{\tt Project} & 0.6 & 6 & 2.4 & 6 \\
+\hline
+{\tt Available} & 0.8 & 2 & 2.6 & 3 \\
+\hline
+{\tt FixCRLF} & 1.6 & 2 & 2 & 3 \\
+\hline
+{\tt Copy} & error & error & error & error\\
+\hline
+{\tt GnuParser} & error & error & error & error \\
+\hline
+{\tt DefaultParser} & error & error & error & error \\
+\hline
+{\tt PosixParser} & error & error & error & error \\
+\hline
+
+{\tt LocationMapper} & 1.83 & 2 & 2 & 4\\
+\hline
+{\tt OntlClassImpl} & 2 & 2.5 & 2 & 3 \\
+\hline
+{\tt ExtendedMessageFormat} &  &  &  &  \\
+\hline
+\hline
+{\bf AVG} & 1.07 & 2.38 & 1.62 & 3.0  \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\caption{Reduction size for subject classes}
+\label{tab:avgimproved}
+\end{table*}
+
+In case of statement deletion using class, all the simple statements are at leaf level. As you move above the leaf level, blocks statements are encountered. As you move further above, complex blocks statements are encountered, that consists other block statements. We want to know what kind of statements are removed?
+Table demonstrate class,number of selected tests,highest level from leaf level where statement removal occur for label 2 and label 1,  Max for the same for  label 2 and label 1 ,\%  for the same for label 2 and label 1.
+
+On overage for level 2 across all 210 reductions, highest level was 1.07. For level 2, across 21 classes, average highest removal level was 2 only once. \emph{Maximum of highest removal level}  was 2.38 across all 210 reductions. For 21 classes, \emph{Maximum of highest removal level}  was 3 or above only for 5 classes and it was 4 or above for only 1 class.
+
+On overage for level 1 across all 210 reductions, highest level was 1.62. For level 1, across 21 classes, average highest removal level was 2 only 5 times and above 3 only once.\emph{Maximum of highest removal level}   was on average 3 across all 210 reductions. For 21 classes, \emph{Maximum of highest removal level} was 3 or above for 9 classes and it was 4 or above for only 2 class. So for 21 classes into consideration, even the \emph{Maximum of highest removal level} for 16 classes was 3. 
+
+As far as removal level are concerned. across all 420 reductions, removal at level 1 happened xx number of times, removal at level 2 happened at yy number of times, removal at level 3 happened at zz number of times and removal at level 4 or above happened only aa number of times. 
+
+It is clear from above discussion that simple statements are simple blocks have best chance of being removed. 
+
+   
+   
+

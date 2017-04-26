@@ -1,0 +1,36 @@
+\section{Methodology}
+
+This section discusses the methodology to automatically build reduced components for resource adaptive software using extended test suite and \mytool\. As we discussed previously either adaptations are pre computed by developers or it can trigger at run time if a pre computed adaptations are not available.
+ %For java programs, pre computed adaptations can be computed using source code or bytecode but run time adaptations can be computed only using bytecode as source code is not available at run time.%
+Developers based on the context knowledge of system and its environment, chooses pre computed adaptations or run time adaptations. Providing multiple reduced components for each of the system component can make system bloat in its size and may create performance issues while system is still functioning in normal environment in some cases. Run time adaptations will pause system until adaptations are completed and then swap it with original component. Pre computed adaptations are useful if adaptations are needed frequently and providing pre computed adaptations does not create serious performance issue. Run time adaptations are useful if adaptations are needed rarely and can be triggered quickly or pre computed adaptations are not available.   
+
+\subsection{Labeling test cases}
+
+Extending test cases is nothing but to prioritize test cases as per its importance and embed this information as part of test case itself. For Junit test cases, this is achieved by providing annotation for each of the test case, we call this labeling of test cases. Test cases are labeled from 0 to n, test cases with label 0 being the most important test cases. If any of these tests fail that means system is not usable. Test cases with label n are the least important and the specifications observed by these test cases can be sacrificed without affecting system seriously. Test cases with label closer to 0 are more important then test cases with label closer to n. This process divides test cases in n different level. Test case labeling can be manual or automatic. In manual labeling, developer will go through the tedious task of going through each test case pertaining to a component and label them. Work on automatic labeling is under progress hence for rest of the paper, we assume manual labeling. Also, labeling cane be applied at coarser or finer levels giving us tighter or loose reductions. For Junit test cases, labeling can be applied at test class level or at each assertion level in turn making life of developer easy or difficult. 
+
+
+\subsection{Workflow for pre computed adaptations}
+\begin{enumerate}
+\item Developer extend the test suite by labeling each test cases or each assertions. 
+\item For each of the level, starting from level n we do the following.
+\item If current level is x, remove all the test cases whose label is k, k  x.
+\item Provide remaining test suite and program or component as input to \mytool\. abcd
+\item The tool outputs minimal program/component for level x.   
+\end{enumerate} 
+
+\subsection{Workflow for run time adaptations}
+
+\begin{enumerate}
+\item Developer extend the test suite by labeling each test cases or each assertions.
+\item Run time adaptations are triggered and we assume reduction is chosen adaptation.
+\item Start with level n and do the following
+\item remove all tests labeled as k where k is greater then n. 
+\item Provide remaining test suite and program as input ot \mytool\
+\item \mytool\ outputs minimal program. check it against resource contraint.
+\item If resource constraint is not violatedm keep the reduced program.
+\item If it is violated, continue by reducing by one level. 
+\item If level 0 is reached, stop and output that system cannot be used under given resource constraint.
+\end{enumerate}
+
+\subsection{Choosing only subset of tests}
+For object oriented components, components are reduced by reducing all the classes and classes are reduced by reducing all the methods. When a class is being reduced, as we will discuss in Tool section, after each unit reduction step, system needs to be compiled and tests need to be executed. Running all the tests of a component when we just reduce a single class can be prohibitively time consuming as this step has to be repeated large number of times. To speed up the process, we only choose a subset of tests from all the tests such that only most relevant tests for the class will be selected. For instance, for Apache commons validator project, changing specification of URLValidator does not affect behavior of CreditCardValidator or CalendarValidator and hence all or some tests testing CreditCardValidator or CalendarValidator need not to run when reducing URLValidator. We find similar situation while working with TSA system also. To accommodate the situation and to allow quick convergence, hddRASS allows its user to specify set of tests out of whole test suite at test class level. hddRASS will only run those tests during the reduction process, saving significant amount of time and resources. Selecting tests is not possible when run time adaptations are triggered on a deployed system.In their cloud refactoring work, kwon and Tilervich proposed a way to choose \emph{corresponding methods/classes}  by a process that they call profile based recommendations that rely on static analysis and dynamic traces. Based on that, they define two terms CC - Class connection and CR - Class Relation and provide recommendations based on that. Value of CC and CR can be from 1 to 0, with 1 means most tight connection or strong relation and value 0 means no connection or no relation. We also do static and dynamic analysis of our program and tests and recommend tests for a class based on Kwon's method but employing much simpler formula. For simplicity, we select a test case only if CC and CR both are 1. Allowing CC and CR thresholds to be less then 1 will select more tests as \emph{corresponding tests}. This will increase the time required to converge the reduced class and decreases the amount of code reduced as the class is tested against more specifications. CC and CR value being 1, if simply put in words means, test case directly calls a method of the class in code and that method was indeed executed during the execution of the tests. CC and CR values should be left as configurable parameters that can be adjusted based on the context.      

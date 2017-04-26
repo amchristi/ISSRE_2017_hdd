@@ -1,0 +1,73 @@
+\begin{table*}
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c||c|c|c|c|c|}
+\hline
+\hline
+& \multicolumn{5}{|c|}{Label 2} & \multicolumn{5}{|c|}{Label 1} \\
+\hline
+Class & Tests Removed & Reduction & Max & \% Reduction & \% Max & Tests removed & Reduction & Max & \% Reduction & \% Max \\
+\hline
+\hline
+{\tt AntBuilder} & 3 & 6.45 & 25 & 4.54 & 17.48 & 4.4 & 9.53 & 30 & 6.73 & 20.97 \\
+\hline
+{\tt UrlValidator} & 2.8 & 7.18 & 14 & 8.75 & 17.07 & 6.1 & 13.54 & 25 & 16.51 & 30.48 \\
+\hline
+{\tt DomainValidator} & 2.6 & 9.45 & 13 & 12.77 & 17.56 & 5.4 & 14.8 & 20 & 20 & 27.02 \\
+\hline
+{\tt RegexValidator} & 1.4 & 2.4 & 6 & 6 & 15 & 2 & 3.6 & 9 & 9 & 22.5 \\
+\hline
+{\tt Engine} & 5.3 & 0 & 0 & 0 & 0 & 7.9 & 0 & 0 & 0 & 0 \\
+\hline
+{\tt JexlArithmetic} & 4.2 & 1.2 & 4 & 0.41 & 1.38 & 7 & 4.4 & 18 & 1.52 & 6.22 \\ 
+\hline
+{\tt JexlEvalContext} & 3.9 & 7.1 & 8 & 24.48 & 27.58 & 8.4 & 7.4 & 11 & 25.51 & 37.93\\
+\hline
+{\tt Schedule} & 2.7 & 0.8 & 2 & 0.62 & 1.57 & 3.5 & 1 & 4 & 0.78 & 3.14\\
+\hline
+{\tt Project} & 3 & 11.27 & 114 & 3.87 & 39.17 & 6.1 & 43.27 & 118 & 14.86 & 40.54\\
+\hline
+{\tt Available} & 34.1 & 26.05 & 82 & 24 & 9 & 7.14 & 23.2 & 41 & 17.44 & 13.82\\
+\hline
+{\tt FixCRLF} & 3.1 & 10.1 & 15 & 16.55 & 24.59 & 6.4 & 12.3 & 20 & 20.16 & 32.78\\
+\hline
+{\tt Copy} &  &  &  &  &  & 0 & 0 & 0 & 0 & 0\\
+\hline
+{\tt GnuParser} & 4 & 2.2 & 11 & 9.56 & 47.82 & 4 & 2.2 & 11 & 9.56 & 47.82\\
+\hline
+{\tt DefaultParser} &  &  &  &  &  &  &  &  &  & \\
+\hline
+{\tt PosixParser} &  &  &  &  &  &  &  &  &  & \\
+\hline
+
+{\tt LocationMapper} & 1.6 & 11.66 & 14 & 8.44 & 10.14 & 2.83 & 12.66 & 28 & 9.17 & 20.28\\
+\hline
+{\tt OntlClassImpl} &  &  &  &  &  &  &  &  &  & \\
+\hline
+{\tt ExtendedMessageFormat} &  &  &  &  &  &  &  &  &  & \\
+\hline
+\hline
+{\bf AVG} & & 6.31 & 19.21 & 7.86 &  &  & 10.82 & 24 & 10 &  \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\caption{Reduction size for subject classes}
+\label{tab:avgimproved}
+\end{table*}
+
+Remaining two subsections, we discussed quality of the reductions. We measure reduction in terms of number of statements deleted (both simple and block) by the method and the tool. We only did some preliminary analysis of reductions. 420 reductions across 21 classes consisting of 210 reductions at label 2 and 210 reductions at label 1 cannot be considered as data coming from a random source and hence cannot be used for thorough empirical analysis
+
+Table demonstrate class,number of selected tests,Average reduction for label 2 and label 1,  Average number of tests removed with label 2 and label 1 ,maximum number of reductions for label 1 and  label 2, standard deviation in reduction for label 1 and label 2, \% reduction for label 1 and label 2.  It is important to note that when tests for label 1 are removed, we also remove tests for label 2 and hence $T_{2} \supset T_{1}$ and hence $C_2 \supseteq C_1$. By design of experiment, $T_{2} \neq T_{1}$. Reductions are many to one and hence $C_2 = C_1$ is possible. In order to verify this, we chose 20 reductions out of 420 reductions such that 10 reductions are at label 1 and remaining 10 reductions are \emph{corresponding label 2 reductions}. We have 10 pairs of Label 1 and Lable 2 reductions and corresponding test cases. We found above equalities to hold 100\% of the time. Also though we are preemptively removing one test at least every time, it is quite possible that class does not reduce at all. Out of 420 reductions we have observed XX number of reductions that does not remove any code.  We also plot all 20 reductions for 8 of the classes with their test removals in graph.
+
+Average tests removed For Label 2, across all reductions runs are YY and for Label 2 is ZZ. Average reduction for label 1 across all 210 instances are 6.31 statements. Out of 21 classes considered, only for 2 classes average reduction is above 10 statements. Percentage reduction for Label 2 across all 210 instances is 7.86\%. Out of 21 classes considered, only for 4 classes, percentage reduction is above 10\%. 
+
+Average tests removed For Label 2, across all reductions runs are YY and for Label 1 is ZZ. Average reduction for label 2 across all 210 instances are 10.82 statements. Out of 21 classes considered, only for 5 classes average reduction is above 10 statements. Percentage reduction for Label 1 across all 210 instances is 10\%. Out of 21 classes considered, only for 5 classes, percentage reduction is above 10\%. 
+
+Should we display maximum numbers and minimum numbers and discuss it?
+
+Out of all 420 instances of reduction, only 62 times more then 10 statements were removed, while only 32 times more then 15 statements are removed.
+
+From above analysis, it is clear that reductions are small, not many statements are reduced if program is reduced after throwing 10\% or 20\% test cases. 
+
+   
+
