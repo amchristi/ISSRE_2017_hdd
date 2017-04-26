@@ -5,3 +5,60 @@ $precision =  \dfrac{\emph{TruePositive}}{ \emph{TruePositive} + \emph{FalsePosi
 $recall =  \dfrac{\emph{TruePositive}}{ \emph{TruePositive} + \emph{FalseNegative}}$ 
 
 We found \mytool\ has precision of 100\% and recall of 94\%. This means, all the reductions applied by \mytool\ were correct but \mytool\ missed 6\% of potential reductions. (Alex, Rahul: This numbers are dummy, will be updated soon.)
+
+\begin{table*}
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c||c|c|c|c|c|}
+\hline
+\hline
+& \multicolumn{5}{|c|}{Label 2} & \multicolumn{5}{|c|}{Label 1} \\
+\hline
+Class & Tests Removed & Reduction & Max & \% Reduction & \% Max & Tests removed & Reduction & Max & \% Reduction & \% Max \\
+\hline
+\hline
+{\tt AntBuilder} & 3 & 6.45 & 25 & 4.54 & 17.48 & 4.4 & 9.53 & 30 & 6.73 & 20.97 \\
+\hline
+{\tt UrlValidator} & 2.8 & 7.18 & 14 & 8.75 & 17.07 & 6.1 & 13.54 & 25 & 16.51 & 30.48 \\
+\hline
+{\tt DomainValidator} & 2.6 & 9.45 & 13 & 12.77 & 17.56 & 5.4 & 14.8 & 20 & 20 & 27.02 \\
+\hline
+{\tt RegexValidator} & 1.4 & 2.4 & 6 & 6 & 15 & 2 & 3.6 & 9 & 9 & 22.5 \\
+\hline
+{\tt Engine} & 5.3 & 0 & 0 & 0 & 0 & 7.9 & 0 & 0 & 0 & 0 \\
+\hline
+{\tt JexlArithmetic} & 4.2 & 1.2 & 4 & 0.41 & 1.38 & 7 & 4.4 & 18 & 1.52 & 6.22 \\ 
+\hline
+{\tt JexlEvalContext} & 3.9 & 7.1 & 8 & 24.48 & 27.58 & 8.4 & 7.4 & 11 & 25.51 & 37.93\\
+\hline
+{\tt Schedule} & 2.7 & 0.8 & 2 & 0.62 & 1.57 & 3.5 & 1 & 4 & 0.78 & 3.14\\
+\hline
+{\tt Project} & 3 & 11.27 & 114 & 3.87 & 39.17 & 6.1 & 43.27 & 118 & 14.86 & 40.54\\
+\hline
+{\tt Available} & 34.1 & 26.05 & 82 & 24 & 9 & 7.14 & 23.2 & 41 & 17.44 & 13.82\\
+\hline
+{\tt FixCRLF} & 3.1 & 10.1 & 15 & 16.55 & 24.59 & 6.4 & 12.3 & 20 & 20.16 & 32.78\\
+\hline
+{\tt Copy} &  &  &  &  &  & 0 & 0 & 0 & 0 & 0\\
+\hline
+{\tt GnuParser} & 4 & 2.2 & 11 & 9.56 & 47.82 & 4 & 2.2 & 11 & 9.56 & 47.82\\
+\hline
+{\tt DefaultParser} &  &  &  &  &  &  &  &  &  & \\
+\hline
+{\tt PosixParser} &  &  &  &  &  &  &  &  &  & \\
+\hline
+
+{\tt LocationMapper} & 1.6 & 11.66 & 14 & 8.44 & 10.14 & 2.83 & 12.66 & 28 & 9.17 & 20.28\\
+\hline
+{\tt OntlClassImpl} &  &  &  &  &  &  &  &  &  & \\
+\hline
+{\tt ExtendedMessageFormat} &  &  &  &  &  &  &  &  &  & \\
+\hline
+\hline
+{\bf AVG} & & 6.31 & 19.21 & 7.86 &  &  & 10.82 & 24 & 10 &  \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\caption{Reduction size for subject classes}
+\label{tab:avgimproved}
+\end{table*}

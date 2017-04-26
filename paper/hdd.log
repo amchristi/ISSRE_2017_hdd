@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.8)  26 APR 2017 02:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.8)  26 APR 2017 02:55
 entering extended mode
 **hdd.tex
-(D:\personal\arpit\research\icst_tools_2017\paper\hdd.tex
+(D:\personal\arpit\issre_2017_hdd\paper\hdd.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +13,7 @@ german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(D:\personal\arpit\research\icst_tools_2017\paper\IEEEtran.cls
+(D:\personal\arpit\issre_2017_hdd\paper\IEEEtran.cls
 Document Class: IEEEtran 2012/11/21 V1.8c by Harald Hanche-Olsen and Anders Chr
 istensen
 -- Based on V1.7a by Michael Shell
@@ -147,7 +147,7 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(D:\personal\arpit\research\icst_tools_2017\paper\code.sty
+(D:\personal\arpit\issre_2017_hdd\paper\code.sty
 Package: code 
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
@@ -369,7 +369,14 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(D:\personal\arpit\research\icst_tools_2017\paper\hdd.aux)
+(D:\personal\arpit\issre_2017_hdd\paper\hdd.aux
+
+LaTeX Warning: Label `tab:avgimproved' multiply defined.
+
+
+LaTeX Warning: Label `tab:avgimproved' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
 LaTeX Font Info:    ... okay on input line 63.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
@@ -382,8 +389,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
 LaTeX Font Info:    ... okay on input line 63.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
 LaTeX Font Info:    ... okay on input line 63.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count131
 \scratchdimen=\dimen147
@@ -402,110 +408,25 @@ Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count137
- (D:\personal\arpit\research\icst_tools_2017\paper\abstract.tex)
-(D:\personal\arpit\research\icst_tools_2017\paper\intro.tex
-
-LaTeX Warning: Citation `selfAdaptation2' on page 1 undefined on input line 5.
-
-
-LaTeX Warning: Citation `darpa1' on page 1 undefined on input line 6.
-
-[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+ (D:\personal\arpit\issre_2017_hdd\paper\abstract.tex)
+(D:\personal\arpit\issre_2017_hdd\paper\intro.tex [1{C:/ProgramData/MiKTeX/2.9/
+pdftex/config/pdftex.map}
 
 
-])
-(D:\personal\arpit\research\icst_tools_2017\paper\related.tex
-
-LaTeX Warning: Citation `selfAdaptation1' on page 2 undefined on input line 3.
-
-
-LaTeX Warning: Citation `selfAdaptation2' on page 2 undefined on input line 3.
-
-
-LaTeX Warning: Citation `selfAdaptation2' on page 2 undefined on input line 3.
-
-
-LaTeX Warning: Citation `modelBasedAdaptation' on page 2 undefined on input lin
-e 3.
-
-
-LaTeX Warning: Citation `architectureBasedAdaptation' on page 2 undefined on in
-put line 3.
-
-
-LaTeX Warning: Citation `ddOriginal' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `hddOriginal' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `hddOriginal' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `chipperJ' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `pricieley' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `hddOriginal' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `cReduce' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `hddOriginal' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `hddOriginal' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `hddOriginal' on page 2 undefined on input line 10.
-
-
-LaTeX Warning: Citation `chipperJ' on page 2 undefined on input line 10.
-
-
-LaTeX Warning: Citation `pricieley' on page 2 undefined on input line 10.
-
-
-LaTeX Warning: Citation `pricieley' on page 2 undefined on input line 12.
-
+]) (D:\personal\arpit\issre_2017_hdd\paper\related.tex
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 16.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-
-LaTeX Warning: Citation `junitHome' on page 2 undefined on input line 18.
-
-) (D:\personal\arpit\research\icst_tools_2017\paper\background.tex [2]
-
-LaTeX Warning: Citation `architectureBasedAdaptation' on page 3 undefined on in
-put line 7.
-
-
-LaTeX Warning: Citation `darpa1' on page 3 undefined on input line 9.
-
-
-LaTeX Warning: Citation `darpa2' on page 3 undefined on input line 17.
-
-) (D:\personal\arpit\research\icst_tools_2017\paper\motivation.tex [3])
-(D:\personal\arpit\research\icst_tools_2017\paper\methodology.tex)
-(D:\personal\arpit\research\icst_tools_2017\paper\tool.tex [4]
-(D:\personal\arpit\research\icst_tools_2017\paper\opensource.tex
-
-LaTeX Warning: Citation `ddOriginal' on page 5 undefined on input line 2.
-
-
-LaTeX Warning: Citation `ddOriginal' on page 5 undefined on input line 2.
-
-
-LaTeX Warning: Citation `hddOriginal' on page 5 undefined on input line 2.
-
-) (D:\personal\arpit\research\icst_tools_2017\paper\sdl.tex)
-(D:\personal\arpit\research\icst_tools_2017\paper\intutivemodification.tex)
-(D:\personal\arpit\research\icst_tools_2017\paper\algorithm.tex)
-(D:\personal\arpit\research\icst_tools_2017\paper\architecture.tex
+))
+(D:\personal\arpit\issre_2017_hdd\paper\background.tex [2])
+(D:\personal\arpit\issre_2017_hdd\paper\motivation.tex [3])
+(D:\personal\arpit\issre_2017_hdd\paper\methodology.tex)
+(D:\personal\arpit\issre_2017_hdd\paper\tool.tex [4]
+(D:\personal\arpit\issre_2017_hdd\paper\opensource.tex)
+(D:\personal\arpit\issre_2017_hdd\paper\sdl.tex)
+(D:\personal\arpit\issre_2017_hdd\paper\intutivemodification.tex)
+(D:\personal\arpit\issre_2017_hdd\paper\algorithm.tex)
+(D:\personal\arpit\issre_2017_hdd\paper\architecture.tex
 <basic_tool_architecture.png, id=20, 456.70625pt x 155.58125pt>
 File: basic_tool_architecture.png Graphic file (type png)
 
@@ -513,16 +434,6 @@ File: basic_tool_architecture.png Graphic file (type png)
 Package pdftex.def Info: basic_tool_architecture.png used on input line 3.
 (pdftex.def)             Requested size: 253.04987pt x 86.2038pt.
  [5]
-
-LaTeX Warning: Reference `fig:fig1' on page 6 undefined on input line 11.
-
-
-LaTeX Warning: Reference `fig:figDetailedToolArch' on page 6 undefined on input
- line 13.
-
-
-LaTeX Warning: Citation `javaparser' on page 6 undefined on input line 13.
-
 <detailed_tool_architecture.png, id=25, 737.75626pt x 179.67125pt>
 File: detailed_tool_architecture.png Graphic file (type png)
 
@@ -530,24 +441,19 @@ File: detailed_tool_architecture.png Graphic file (type png)
 Package pdftex.def Info: detailed_tool_architecture.png used on input line 17.
 (pdftex.def)             Requested size: 455.49052pt x 110.92894pt.
 )
-(D:\personal\arpit\research\icst_tools_2017\paper\usage.tex
-
-LaTeX Warning: Reference `fig:figDetailedToolArch' on page 6 undefined on input
- line 1.
-
-) (D:\personal\arpit\research\icst_tools_2017\paper\challanges.tex))
-(D:\personal\arpit\research\icst_tools_2017\paper\evaluation.tex [6 <D:/persona
-l/arpit/research/icst_tools_2017/paper/basic_tool_architecture.png>]
+(D:\personal\arpit\issre_2017_hdd\paper\usage.tex)
+(D:\personal\arpit\issre_2017_hdd\paper\challanges.tex))
+(D:\personal\arpit\issre_2017_hdd\paper\evaluation.tex [6 <D:/personal/arpit/is
+sre_2017_hdd/paper/basic_tool_architecture.png>]
 Underfull \vbox (badness 3375) has occurred while \output is active []
 
- [7 <D:/personal/arpit/research/icst_tools_2017/paper/detailed_tool_architectur
-e.png>])
-(D:\personal\arpit\research\icst_tools_2017\paper\results.tex
-(D:\personal\arpit\research\icst_tools_2017\paper\applicability.tex)
-(D:\personal\arpit\research\icst_tools_2017\paper\accuracy.tex)
-(D:\personal\arpit\research\icst_tools_2017\paper\reductionsize.tex [8])
-(D:\personal\arpit\research\icst_tools_2017\paper\leafnodelevel.tex))
-(D:\personal\arpit\research\icst_tools_2017\paper\hdd.bbl [9])
+ [7 <D:/personal/arpit/issre_2017_hdd/paper/detailed_tool_architecture.png>])
+(D:\personal\arpit\issre_2017_hdd\paper\results.tex
+(D:\personal\arpit\issre_2017_hdd\paper\applicability.tex)
+(D:\personal\arpit\issre_2017_hdd\paper\accuracy.tex)
+(D:\personal\arpit\issre_2017_hdd\paper\reductionsize.tex [8])
+(D:\personal\arpit\issre_2017_hdd\paper\leafnodelevel.tex [9]))
+(D:\personal\arpit\issre_2017_hdd\paper\hdd.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -559,20 +465,15 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[10
+[10] (D:\personal\arpit\issre_2017_hdd\paper\hdd.aux)
 
-] (D:\personal\arpit\research\icst_tools_2017\paper\hdd.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  6227 strings out of 493921
- 95071 string characters out of 3144880
- 215825 words of memory out of 3000000
+ 94541 string characters out of 3144880
+ 217825 words of memory out of 3000000
  9391 multiletter control sequences out of 15000+200000
  45274 words of font info for 88 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
@@ -589,7 +490,7 @@ onts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/
 utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on hdd.pdf (10 pages, 204045 bytes).
+Output written on hdd.pdf (10 pages, 202721 bytes).
 PDF statistics:
  85 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
