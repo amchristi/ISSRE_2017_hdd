@@ -2,6 +2,38 @@
 
 In order to evaluate the methodology, we applied the method and the tool on NetBeans IDE. NetBeans IDE is widely used among the developers and considered one of the popular development tools for java developers.  The main version of NetBeans IDE that we downloaded for our experiments consists of 7386809 non empty non commented lines of code. NetBeans IDE source code seems to be well tested with large number of unit tests, function tests and performance tests written for most of the modules. For As a stand alone tool, NetBeans IDE uses significant amount of resources like memory and cpu. For the study, we concentrate on memory as a resource and attempted to automatically build NetBeans IDE that can consume less memory.
 
+\begin{tikzpicture}
+\begin{axis}[
+	title= Run 1,
+	xlabel=time,
+	ylabel=$log(IMU)$
+]
+\addplot[blue] table {run1Reduced.data};
+\addplot[red] table {run1.txt};
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[
+	title= Run 2,
+	xlabel=time,
+	ylabel=$log(IMU)$
+]
+\addplot[blue] table {run2Reduced.txt};
+\addplot[red] table {run2.txt};
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[
+	title= Run 3,
+	xlabel=time,
+	ylabel=$log(IMU)$
+]
+\addplot[blue] table {run3Reduced.txt};
+\addplot[red] table {run3.txt};
+\end{axis}
+\end{tikzpicture}
 Redo and undo are very common functionality used of NetBeans IDE, just like any other IDE. When any form of editing happens within the IDE, it has to be stored in order for undo-redo to work correctly. In order to preserve resources, NetBeans IDE limits undo-redo to 100 steps, \emph{value 100 is hard coded in UndoMananger of openide.awt module}. Bug 50411 of NetBeans IDE bugzilla database titled as \emph{increase undo stack size}, discusses user request to increase the undo-redo maximum steps size. 3rd comment on the chain of discussion mention that NetBeans IDE used to have very large limit but that leads to large memory consumption and hence limit is placed. The discussion of the bug describes undo-redo as a possible large memory consumer if IDE is stretched with edits. 
 
 In order to demonstrate our methodology and tool, we created a fault injected environment. We changed the limit of maximum undo-redo from 100 to $MAX_INT / 50$, number 50 being an engineering decision, allowing perpetual undo-redo operations to IDE users.  In real world IDE usage, a user will continuue edits on IDE  and IDE will store necessary information on undo and redo stacks to apply them later if undo or redo operations are performed. If IDE is used for a very long time without closing it, these stacks can grow significantly. 
