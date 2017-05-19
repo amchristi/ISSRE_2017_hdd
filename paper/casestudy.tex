@@ -1,51 +1,147 @@
 \section{Case Study}
 
-In order to evaluate the methodology, we applied the method and the tool on NetBeans IDE. NetBeans IDE is widely used among the developers and considered one of the popular development tools for java developers.  The main version of NetBeans IDE that we downloaded for our experiments consists of 7386809 non empty non commented lines of code. NetBeans IDE source code seems to be well tested with large number of unit tests, function tests and performance tests written for most of the modules. For As a stand alone tool, NetBeans IDE uses significant amount of resources like memory and cpu. For the study, we concentrate on memory as a resource and attempted to automatically build NetBeans IDE that can consume less memory.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|c| |c| |c|}
+\hline
+\hline
+Edits & Percentage & Description \\
+\hline
+{\tt Large} & 60 & 400 characters in 4 lines of 100 characters \\
+\hline
+{\tt Medium} & 20 & 100 characters in 1 lines of 100 characters \\
+\hline
+{\tt Small} & 10 & 10 words in 1 lines \\
+\hline
+{\tt CTRL + Z} & 5 & undo \\
+\hline
+{\tt CTRL + Y} & 5 & redo \\
+\hline
+\hline
+\end{tabular}
+
+
+
+\caption{Type of Edits}
+\label{tab:edittypes}
+\end{center}
+\end{table}
+
+In order to evaluate the methodology, we applied the method and the tool on NetBeans IDE \cite{netbeans}. NetBeans IDE is widely used among the developers and considered one of the popular development tools for java developers.  The main version of NetBeans IDE that we downloaded for our experiments consists of 7386809 non empty non commented lines of code. NetBeans IDE source code seems to be well tested with large number of unit tests, function tests and performance tests written for most of the modules. For As a stand alone tool, NetBeans IDE uses significant amount of resources like memory and cpu. For the study, we concentrate on memory as a resource and attempted to automatically build NetBeans IDE that can consume less memory.
+
+
+
+
+\begin{table*}
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|}
+\hline
+\hline
+& \multicolumn{4}{|c|}{10 min run AIMU in MB} & \multicolumn{4}{|c|}{5 min run AIMU in MB} \\
+\hline
+Runs & Original & Reduced & Reduction & \% Reduction(MB) &  Original & Reduced & Reduction & \% Reduction \\
+\hline
+\hline
+{\tt Run 1} & 34.34 & 15.75 & 18.59 & 54.13 & 22.34 & 13.39 & 8.95 & 40.06 \\
+\hline
+{\tt Run 2} & 24.46 & 17.11 & 7.35 & 30.04 & 17.56 & 14.66 & 2.9 & 16.51 \\
+\hline
+{\tt Run 3} & 24.9 & 19.18 & 5.72 & 22.97 & 24.22 & 19.82 & 4.4 & 18.16  \\
+\hline
+{\tt Run 4} & 34.45 & 16.73 & 17.72 & 51.43 & 21.37 & 15.95 & 5.41 & 24.91 \\
+\hline
+{\tt Run 5} & 30.87 & 19.3 & 11.57 & 37.47 & 21.37 & 15.95 & 5.41 & 24.91 \\
+\hline
+\hline
+\hline
+{\bf AVG} & 29.80 & 17.61 & 12.19 & 39.21 & 21.37 & 15.95 & 5.41 & 24.91 \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\caption{AIMU for different experimental runs}
+\label{tab:aimuforruns}
+\end{table*}
+
+
 
 \begin{tikzpicture}
 \begin{axis}[
 	title= Run 1,
-	xlabel=time,
-	ylabel=$log(IMU)$
+	xlabel=time in seconds,
+	ylabel=$log_{2}(IMU \; in \; MB)$
 ]
 \addplot[blue] table {run1Reduced.data};
 \addplot[red] table {run1.txt};
+\legend{Adapted IDE, Original IDE}
 \end{axis}
 \end{tikzpicture}
 
 \begin{tikzpicture}
 \begin{axis}[
 	title= Run 2,
-	xlabel=time,
-	ylabel=$log(IMU)$
+	xlabel=time in seconds,
+	ylabel=$log_{2}(IMU \; in \; MB)$
 ]
 \addplot[blue] table {run2Reduced.txt};
 \addplot[red] table {run2.txt};
+\legend{Adapted IDE, Original IDE}
 \end{axis}
 \end{tikzpicture}
 
 \begin{tikzpicture}
 \begin{axis}[
 	title= Run 3,
-	xlabel=time,
-	ylabel=$log(IMU)$
+	xlabel=time in seconds,
+	ylabel=$log_{2}(IMU \; in \; MB)$
 ]
 \addplot[blue] table {run3Reduced.txt};
 \addplot[red] table {run3.txt};
+\legend{Adapted IDE, Original IDE}
 \end{axis}
 \end{tikzpicture}
-Redo and undo are very common functionality used of NetBeans IDE, just like any other IDE. When any form of editing happens within the IDE, it has to be stored in order for undo-redo to work correctly. In order to preserve resources, NetBeans IDE limits undo-redo to 100 steps, \emph{value 100 is hard coded in UndoMananger of openide.awt module}. Bug 50411 of NetBeans IDE bugzilla database titled as \emph{increase undo stack size}, discusses user request to increase the undo-redo maximum steps size. 3rd comment on the chain of discussion mention that NetBeans IDE used to have very large limit but that leads to large memory consumption and hence limit is placed. The discussion of the bug describes undo-redo as a possible large memory consumer if IDE is stretched with edits. 
 
-In order to demonstrate our methodology and tool, we created a fault injected environment. We changed the limit of maximum undo-redo from 100 to $MAX_INT / 50$, number 50 being an engineering decision, allowing perpetual undo-redo operations to IDE users.  In real world IDE usage, a user will continuue edits on IDE  and IDE will store necessary information on undo and redo stacks to apply them later if undo or redo operations are performed. If IDE is used for a very long time without closing it, these stacks can grow significantly. 
+\begin{tikzpicture}
+\begin{axis}[
+	title= Run 4,
+	xlabel=time in seconds,
+	ylabel=$log_{2}(IMU \; in \; MB)$
+]
+\addplot[blue] table {run4Reduced.txt};
+\addplot[red] table {run4.txt};
+\legend{Adapted IDE, Original IDE}
+\end{axis}
+\end{tikzpicture}
 
-UndoManager implements functionality of undo-redo and is a part of openide.awt module. The module consists of total xxxx lines of code and yyy number of tests written for the entire module. After studying the module and tests, we chose 3 tests out of yyy tests and marked these 3 tests as level 1 tests. All other tests are not labeled and hence considered as level infinity test by the method. Apart from the original NetBeans program, based on the labeled test cases, we created 1 reduced version of the program \emph{automatically} using our tool and methodology. 
+\begin{tikzpicture}
+\begin{axis}[
+	title= Run 5,
+	xlabel=time in seconds,
+	ylabel=$log_{2}(IMU \; in \; MB)$
+]
+\addplot[blue] table {run5Reduced.txt};
+\addplot[red] table {run5.txt};
+\legend{Adapted IDE, Original IDE}
+\end{axis}
+\end{tikzpicture}
 
-In order to measure resource preservation in terms of memory by the reduced program, we need to run both the IDEs with exact same edits for same amount of time while keeping rest of the environment same. For our experiments, we created a separate ubuntu virtual box with 4GB RAM. We only installed those software and libraries needed to run the NetBeans IDE and some data collection tools that we run. While running both the IDEs, we kept only the IDE and data collection program running. In order to subject both the IDEs with consistent edits, we used Linux Desktop Projejct(ldtp) tool and send exact same edits with same amount of delays between edits. We wanted to load the IDE with large edits, we want to trigger edits that are large in numbers and size. We crated a mix of edits that consists of 60 percent of large edits, 400 character of random chunk consisting of 100 character each line sent at a time, 20 percent of medium edits, 100 character of random chunk consisting of single line, and 10 percent of small edits, 25 character of chunks, 5 percent of Ctrl+Z characters and 5 percent of Ctrl + Y characters. There is a consistent amount of delays applied after each of the edits. All the random characters are pseudo random, so as long as the seed is the same, we can repeat it for both the runs, one with original IDE and other with reduced IDE. We wrote a simple python script that will send all the edits to NetBeans IDE for a certain amount of time in a loop. 
 
-For our experiments, we run the python script for 5 minutes and 10 minutes of time on both the original IDE and reduced IDE. ldtp sends its keystrokes very fast to IDE and hence as long as delay time is smaller, it can quickly populate the IDE with large number of edits even with very small amount of time. It is not possible to populate IDE with such a large amount of edits in 5 minutes manually. We repeated the 5 min and 10 min run on both the IDEs 5 times, while changing the seed, producing varying edits every time. We want to measure memory consumed by java objects of NetBeans IDE, NetBeans IDE itself is written in java, we used Jmap tool to measure total memory consumed by NetBeans IDE java objects. For our experiments, we start the IDE with a single open java file with single method and we populated all the edits in this method.  We called Jmap every second during our run collecting 300 data points for 5 min run and 600 data points for 10 min run. We measured average increase in memory utilization (further referred as AIMU) by NetBeans, since we start sending edits to IDE using jmap. AIMU is computed by plotting the data points collected during the experiments and averaging area under curve over time. For each of the 10 runs, AIMU by reduced version was less then AIMU by original version. For 10 min run, \emph{least possible} AIMU across 10 min runs on original program was 24.9MB, that was \emph{worse then highest possible} AIMU across 10 min runs on reduced program,19.3. For 5 min runs, these numbers were 17.56 and 14.66.  For 10 min runs, for original program, average AIMU was 29.80MB and for reduced program it was 17.61MB, reduced version preserving on average 12.19MB memory for 10 min run measuring an average 39 percent reduction in memory utilization. For 5 min run, for original program AIMU was 21.37MB and for reduced program it was 15.95MB, reduced version preserving on average 5.41 MB memory for 5 min runs measuring an average 24 percent reduction in memory utilization. 
+Redo and undo are very common functionality used of NetBeans IDE, just like any other IDE. When any form of editing happens within the IDE, it has to be stored in order for undo-redo to work correctly. In order to preserve resources, NetBeans IDE limits undo-redo to 100 steps, \emph{value 100 is hard coded in UndoMananger of openide.awt module}. Bug 50411 of NetBeans IDE bugzilla database titled as \emph{increase undo stack size}, discusses user request to increase the undo-redo maximum steps size \cite{bug45011}. 3rd comment on the chain of discussion mention that NetBeans IDE used to have very large limit but that leads to large memory consumption and hence limit is placed. The discussion of the bug describes undo-redo as a possible large memory consumer if IDE is stretched with edits. 
 
-Figure x and y demonstrate Increase in Memory Utilization(IMU) over the run of our experiments for 10 min and 5 min runs. When we study these graphs carefully,we find out that for original program IMU graph demonstrates a step pattern where memory utilization keeps increasing over the run of experiments with very few places where it goes down, while for reduced program runs, it demonstrates a more zig-zag pattern where periodically it relinquishes some of the utilized memory. 
+In order to demonstrate our methodology and tool, we created a fault injected environment. We changed the limit of maximum undo-redo from 100 to $MAXINT / 50$, number 50 being an engineering decision, allowing perpetual undo-redo operations to IDE users.  In real world IDE usage, a user will continue edits on IDE  and IDE will store necessary information on undo and redo stacks to apply them later if undo or redo operations are performed. If IDE is used for a very long time without closing it, these stacks can grow significantly. 
 
+UndoManager implements functionality of undo-redo and is a part of openide.awt module. The module under consideration for reduction, openide.awt module consists of 11284 non empty non comment source code lines, 4808 non empty non comment test code lines and 146 test cases. After studying the module and tests, we chose 3 tests out of 146 tests and marked these 3 tests as level 1 tests. All other tests are not labeled and hence considered as level infinity test by the method. Apart from the original NetBeans program, based on the labeled test cases, we created 1 reduced version of the program \emph{automatically} using our tool and methodology. 
+
+\subsection{Experimental setup}
+In order to measure resource preservation in terms of memory by the reduced program, we need to run both the IDEs with exact same edits for same amount of time while keeping rest of the environment same. For our experiments, we created a separate ubuntu virtual box with 4GB RAM. We only installed those software and libraries needed to run the NetBeans IDE and some data collection tools that we run. While running both the IDEs, we kept only the IDE and data collection program running. In order to subject both the IDEs with consistent edits, we used Linux Desktop Projejct(ldtp) tool and send exact same edits with same amount of delays between edits. We wanted to load the IDE with large edits, we want to trigger edits that are large in numbers and size. Table ~\ref{tab:edittypes} describes mix of edits that we used for our experiments. We crated a mix of edits that consists of 60 percent of large edits, 400 character of random chunk consisting of 100 character each line sent at a time, 20 percent of medium edits, 100 characters random chunk consisting of single line, and 10 percent of small edits, 25 character of chunks, 5 percent of Ctrl+Z characters, performing undo and 5 percent of Ctrl + Y characters, performing redo. There is a consistent amount of delays applied after each of the edits. All the random characters are pseudo random, so as long as the seed is the same, we can repeat it for both the runs, one with original IDE and other with reduced IDE. We wrote a simple python script that will send all the edits to NetBeans IDE for a certain amount of time in a loop. 
+
+For our experiments, we run the python script for 5 minutes and 10 minutes of time on both the original IDE and reduced IDE. ldtp sends its keystrokes very fast to IDE and hence as long as delay time is smaller, it can quickly populate the IDE with large number of edits even with very small amount of time. It is not possible to populate IDE with such a large amount of edits in 5 minutes manually. We repeated the 5 min and 10 min run on both the IDEs 5 times, while changing the seed, producing varying edits every time. We want to measure memory consumed by java objects of NetBeans IDE, NetBeans IDE itself is written in java, we used Jmap tool to measure total memory consumed by NetBeans IDE java objects \cite{jmap}. For our experiments, we start the IDE with a single file and populated all the edits in this file.  We called Jmap every second during our run collecting 300 data points for 5 min run and 600 data points for 10 min run. 
+
+\subsection{Results}
+We measured average increase in memory utilization (further referred as AIMU) by NetBeans, since we start sending edits to IDE. AIMU is computed by plotting the data points collected during the experiments and averaging area under curve over time. Table ~\ref{tab:aimuforruns} demonstrates AIMU for each of the run and average values across 5 runs for 5 minute run and 10 minute runs. Column original represents AIMU for original IDE, column reduced represent AIMU for adpated IDE, Reduction represents reduction in AIMU for adapted IDE and \% reduction column represents \% reduction in AIMU. For each of the 10 runs, AIMU by reduced version was less then AIMU by original version. For 10 min run, \emph{least possible} AIMU across 10 min runs on original program was 24.9MB, that was \emph{worse then highest possible} AIMU across 10 min runs on reduced program,19.3. For 5 min runs, these numbers were 17.56 and 14.66.  For 10 min runs, for original program, average AIMU was 29.80MB and for reduced program it was 17.61MB, reduced version preserving on average 12.19MB memory for 10 min run measuring an average 39 percent reduction in memory utilization. For 5 min run, for original program AIMU was 21.37MB and for reduced program it was 15.95MB, reduced version preserving on average 5.41 MB memory for 5 min runs measuring an average 24 percent reduction in memory utilization. 
+
+We also provide comparison of complete run for all 10 min runs in figures x to y. It is very clear from all the graphs that for each of the 5 runs, IMU (Increase in Memory Utilization) was significant for original program then reduced program. If IDE is run for very long time with large amount of edits, reduced IDE will preserve significant amount of memory, though at a cost of not allowing undo-redo functionality.
 
     
 
