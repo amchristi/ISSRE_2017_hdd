@@ -14,9 +14,12 @@ Authors of the most recent tool picinery  \cite{pricieley}, lamented the fact th
 %chipperJ reduces java programs for automated bug isolation and was successfully applied to reduce complex java programs for bug isolation \cite{chipperJ}. chipperJ rely on very naive symptom like null pointer exception or looking for particular string in the output and cannot be used for general purpose standalone tool with modern day software without significant changes.%
 
 Most HDD (and DD) implementation assumes ability to provide test results into HDD implementation in the format that the tool wants. That means a practitioner will have to make sure that they write some sort of test script and plug in the results in the format the tool expects. picinery has \texttt{test \"put your test script here\"} option in command and chipperJ architecture figure has a test script block supplying results to chipperJ.  Before any HDD reductions will start, a pre processing step is expected and mostly performed when HDD tools are run for research purpose. 
- 
-With modern day software system, there is an ecosystem of programming and testing technology. Most of the open source and even industry Java projects have their tests written in JUnit. Same is true with other programming languages like C\#, javascript etc. HDD tools fail to leverage this fact leaving some of the work as pre-processing for developers. As we will discuss later, hddRASS is a complete standalone tool that requires no pre-processing if Java/Android program is used with Junit \cite{junitHome} test suite. Also, as we will discuss in tool section, our tool is easily extendable to other test framework in the ecosystem.
 
+Rahul writes about statement deletion mutatation. 
+Rahul writes about unchecked coverage.
+ 
+%With modern day software system, there is an ecosystem of programming and testing technology. Most of the open source and even industry Java projects have their tests written in JUnit. Same is true with other programming languages like C\#, javascript etc. HDD tools fail to leverage this fact leaving some of the work as pre-processing for developers. As we will discuss later, hddRASS is a complete standalone tool that requires no pre-processing if Java/Android program is used with Junit \cite{junitHome} test suite. Also, as we will discuss in tool section, our tool is easily extendable to other test framework in the ecosystem.
+%
 %Mutation \cite{mutation} was technique to inject fault in the program to measure effectiveness of the test suite. SDL \cite{sdlMutation} is statement deletion mutation. HDD based program reductions are essentially applying SDL mutation at each step of reduction. They just apply it in a very systematic way with the end goal of keeping the fault and building on the last useful mutant generated until a local minimal mutant is found, in our case, end goal is keeping program correct with respect to test suite.%    
  
 
